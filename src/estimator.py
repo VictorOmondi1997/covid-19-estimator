@@ -1,2 +1,24 @@
 def estimator(data):
-  return data
+    output = {'data':data, 'impact': {}, 'severeImpact': {}}
+    output['impact']['currentlyInfected'] = data['reportedCases'] * 10
+    output['severeImpact']['currentlyInfected'] = data['reportedCases'] * 50
+    output['impact']['infectionsByRequestedTime'] = output['impact']['currentlyInfected'] * (2 ** (data['timeToElapse']//3))
+    output['severeImpact']['infectionsByRequestedTime'] = output['severeImpact']['currentlyInfected'] * (2 ** (data['timeToElapse']//3))
+    return output
+
+if __name__ == "__main__":
+    data = {
+      'region':{
+        'name':'Africa', 
+        'avgAge':19.7, 
+        'avgDailyIncomeInUSD':5, 
+        'avgDailyIncomePopulation':0.71
+      },
+        'periodType':'days', 
+        'timeToElapse':58, 
+        'reportedCases':674, 
+        'population':66622705, 
+        'totalHospitalBeds':1380614
+    }
+    dic = estimator(data)
+    print(dic)
