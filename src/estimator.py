@@ -3,9 +3,9 @@ def estimator(data):
     output['impact']['currentlyInfected'] = data['reportedCases'] * 10
     output['severeImpact']['currentlyInfected'] = data['reportedCases'] * 50
     if data['periodType'] == 'weeks':
-        data['timeToElapse'] == data['timeToElapse'] * 7
+        data['timeToElapse'] = data['timeToElapse'] * 7
     elif data['periodType'] == 'months':
-        data['timeToElapse'] == data['timeToElapse'] * 30
+        data['timeToElapse'] = data['timeToElapse'] * 30
     output['impact']['infectionsByRequestedTime'] = output['impact']['currentlyInfected'] * (2 ** (data['timeToElapse']//3))
     output['severeImpact']['infectionsByRequestedTime'] = output['severeImpact']['currentlyInfected'] * (2 ** (data['timeToElapse']//3))
     output['impact']['severeCasesByRequestedTime'] = int(15/100 * (output['impact']['infectionsByRequestedTime']))
