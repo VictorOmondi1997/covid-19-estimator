@@ -36,3 +36,19 @@ if __name__ == "__main__":
     }
     dic = estimator(data)
     print(dic)
+
+    data2 = {
+      'region':{
+        'name':'Africa', 
+        'avgAge':19.7, 
+        'avgDailyIncomeInUSD':4, 
+        'avgDailyIncomePopulation':0.73
+      },
+        'periodType':'days', 
+        'timeToElapse':38, 
+        'reportedCases':2747, 
+        'population':92931687, 
+        'totalHospitalBeds':678874
+    }
+    dic2 = estimator(data2)
+    print(dic2)
