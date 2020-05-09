@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/VictorOmondi1997/covid-19-estimator) 
+
 # #BuildForSDG Cohort-1 Python Assessment
 
 > Build an overly simplified COVID-19 infection impact estimator
